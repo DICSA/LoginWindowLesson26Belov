@@ -3,7 +3,7 @@
 //  LoginWindowLesson26Belov
 //
 //  Created by Белов Руслан on 12.08.2022.
-//
+// 
 
 import UIKit
 
@@ -18,22 +18,48 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    /* не все успел реализовать что хотел((( извините 2 дня отмечали день рождения девушки как то я загулял было самонадеянно оставлять это на последние 4 часа до сдачи 🤦‍♂️
+     не успел разобраться в перекрытии клавиатурой элементов и скрытии ее по тапу на экран, а так же градиент для backgrond */
+
+
+    //MARK: - методы перадачи информации между экранами
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController
+        else { return }
+        welcomeVC.welcomingPrepare = "Welcome, \(String(describing:userNameField.text ?? ""))"
+
+    }
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        guard let welcomeVC = segue.source as? WelcomeViewController
+        guard segue.source is WelcomeViewController
         else { return }
-        welcomeVC.welcomingText.text = "Welcome, \(String(describing:userNameField.text ?? ""))"
+        userNameField.text = ""
+        passwordUserField.text = ""
     }
 
-
-    @IBAction func logInButtom() {
-        
+//Не совсем понимаю как реализовать
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
     }
     
 
+    // MARK: - настройка кнопок
 
+    @IBAction func logInButtom() {
+        if userNameField.text == "Eugenya" , passwordUserField.text == "Best" {
 
-    // MARK: - настройка алертов на кнопки
+        } else {
+            let alert = UIAlertController(title: "Invalid login or password 😿",
+                                          message: "Please, enter corret login and password",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "☑️",
+                                          style: UIAlertAction.Style.default,
+                                          handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+
+    }
 
     @IBAction func forgotUserName() {
         // создать алерт

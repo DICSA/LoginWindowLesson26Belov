@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="1833" y="430"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="hLU-NB-qf2">
             <objects>
                 <viewController id="2AF-bm-Y0i" sceneMemberID="viewController">
@@ -163,8 +163,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2022-08-03 03.45.43" translatesAutoresizingMaskIntoConstraints="NO" id="H4u-hn-mML">
+                                <rect key="frame" x="93" y="44" width="189" height="196"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65R-3c-oMU">
-                                <rect key="frame" x="154" y="329" width="67" height="31"/>
+                                <rect key="frame" x="154" y="299" width="67" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -176,11 +180,11 @@
                         <viewLayoutGuide key="safeArea" id="eCC-zo-b8y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UHY-uY-D9v"/>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="UHY-uY-D9v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2g-Cd-7yg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598" y="1259"/>
+            <point key="canvasLocation" x="2597.5999999999999" y="1258.920539730135"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9NH-Jg-nhW">
@@ -204,6 +208,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BGV-SN-uee" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hrm-BE-JWI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -237,6 +242,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2022-08-03 03.45.43" width="1280" height="960"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">

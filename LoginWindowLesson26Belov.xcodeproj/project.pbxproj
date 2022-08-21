@@ -15,6 +15,8 @@
 		4411482D28A68FDD00F8B1B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4411482B28A68FDD00F8B1B3 /* LaunchScreen.storyboard */; };
 		4411483528A8326700F8B1B3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411483428A8326700F8B1B3 /* WelcomeViewController.swift */; };
 		4411483B28AD613400F8B1B3 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411483A28AD613400F8B1B3 /* ModelUser.swift */; };
+		44A13DB328B29A3A0034770B /* PersonMainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A13DB228B29A3A0034770B /* PersonMainPageVC.swift */; };
+		44A13DB528B29A800034770B /* PersonSecondPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A13DB428B29A800034770B /* PersonSecondPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4411482E28A68FDD00F8B1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4411483428A8326700F8B1B3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4411483A28AD613400F8B1B3 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		44A13DB228B29A3A0034770B /* PersonMainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMainPageVC.swift; sourceTree = "<group>"; };
+		44A13DB428B29A800034770B /* PersonSecondPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSecondPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			children = (
 				4411482428A68FDC00F8B1B3 /* LoginViewController.swift */,
 				4411483428A8326700F8B1B3 /* WelcomeViewController.swift */,
+				44A13DB228B29A3A0034770B /* PersonMainPageVC.swift */,
+				44A13DB428B29A800034770B /* PersonSecondPageVC.swift */,
 			);
 			path = "ViewControllers ";
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 				4411483B28AD613400F8B1B3 /* ModelUser.swift in Sources */,
 				4411482128A68FDC00F8B1B3 /* AppDelegate.swift in Sources */,
 				4411482328A68FDC00F8B1B3 /* SceneDelegate.swift in Sources */,
+				44A13DB528B29A800034770B /* PersonSecondPageVC.swift in Sources */,
+				44A13DB328B29A3A0034770B /* PersonMainPageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

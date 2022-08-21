@@ -11,11 +11,45 @@ final class LoginViewController: UIViewController {
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordUserField: UITextField!
+    @IBOutlet weak var stackViewForButtonForgot: UIStackView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShoy(notification:)),
+                                               name: UIResponder.keyboardDidShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
 
 
-
-    
     private let user = User.getUser()
+
+    //MARK: - поднятие контента с вызовом клавиатуры
+
+    @objc private func keyboardWillShoy(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            let bottomSpace = self.view.frame.height - (stackViewForButtonForgot.frame.origin.y + stackViewForButtonForgot.frame.height)
+            self.view.frame.origin.y -= keyboardHeight - bottomSpace + 10
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardDidShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
 
     //MARK: - методы перадачи информации между экранами
 
@@ -24,7 +58,6 @@ final class LoginViewController: UIViewController {
         guard let welcomeVC = segue.destination as? WelcomeViewController
         else { return }
         welcomeVC.user = user.userName
-
     }
     //метод работает назад
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {

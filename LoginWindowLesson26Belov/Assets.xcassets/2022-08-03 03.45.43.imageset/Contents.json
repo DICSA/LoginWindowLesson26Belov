@@ -1,16 +1,30 @@
 {
   "images" : [
     {
-      "filename" : "2022-08-03 03.45.43.jpg",
+      "filename" : "Снимок экрана 2022-08-22 в 03.08.46@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Снимок экрана 2022-08-22 в 03.08.46@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Снимок экрана 2022-08-22 в 03.08.46@3x.png",
       "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

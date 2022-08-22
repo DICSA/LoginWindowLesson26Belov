@@ -6,28 +6,37 @@
 //
 
 struct User {
-    let userName: String
-    let passwordUser: String
-
-    static func getUser() -> User {
-        User(userName: "1", passwordUser: "1")
-    }
+    let login: String
+    let password: String
+    let info: InfoUser
 }
 
-struct Person {
-    let personName: String
-    let secondPersonName: String
+struct InfoUser {
+    let Name: String
+    let secondName: String
     let age: Int
-    let relations: Bool
-    let yearsInDevelopment: Double
+    let relations: String
+    let levelDevelopment: String
     let hobbies: String
-
-    static func getPerson() -> Person {
-        Person(personName: "Руслан", secondPersonName: "Белов", age: 30, relations: true, yearsInDevelopment: 0.8, hobbies: "Мотоциклы")
-    }
+    let bio: String
 }
 
 
+extension User {
+    static func getUser() -> User {
+        User(login: "1",
+             password: "1",
+             info: InfoUser(Name: "Руслан",
+                            secondName: "Белов",
+                            age: 30,
+                            relations: "Есть невеста",
+                            levelDevelopment: "Начинающий",
+                            hobbies: "Мотоциклы",
+                            bio: "Привет! Меня зовут Руслан и я начинающий разработчик. До начала моего пути в разработке я работал брокером по ценным в банке БКС. ")
+        )
+
+    }
+}
 
 
 

@@ -51,31 +51,50 @@ final class LoginViewController: UIViewController {
                                                   object: nil)
     }
 
-    //MARK: - методы перадачи информации между экранами
-
-    //метод работает вперед
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController
-        else { return }
-        welcomeVC.user = user.userName
-    }
-    //метод работает назад
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        userNameField.text = ""
-        passwordUserField.text = ""
-    }
-
+    //MARK: - скрытие клавиатуры по нажатию на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
+
+    //MARK: - методы перадачи информации между экранами
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let tabBar = segue.destination as? UITabBarController else { return }
+        guard let viewContolers = tabBar.viewControllers else { return }
+
+
+        for viewContoler in viewContolers {
+            if let navigationVC = viewContoler as? UINavigationController {
+                guard let privateArea = navigationVC.topViewController as? PersonMainPageVC else { return }
+                privateArea.user = user
+            } else if let welcomVC = viewContoler as? WelcomeViewController {
+                welcomVC.user = user.login
+            }
+        }
+    }
+
+    //метод работает вперед
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let welcomeVC = segue.destination as? WelcomeViewController
+//        else { return }
+//        welcomeVC.user = user.login
+//    }
+    //метод работает назад
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard segue.source is WelcomeViewController else {return}
+        userNameField.text = ""
+        passwordUserField.text = ""
+    }
+
 
 
 
     // MARK: - настройка кнопок
 
     @IBAction func logInButtom() {
-        guard userNameField.text == user.userName, passwordUserField.text == user.passwordUser else {
+        guard userNameField.text == user.login, passwordUserField.text == user.password else {
             showAlert(title: "Invalid login or password 😿" ,
                       massage: "Please, enter corret login and password",
                       textField: passwordUserField
@@ -90,8 +109,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Oops!", massage: "Your name is \(user.userName) 😉")
-        : showAlert(title: "Oops!", massage: "Your password is \(user.passwordUser) 😉")
+        ? showAlert(title: "Oops!", massage: "Your name is \(user.login) 😉")
+        : showAlert(title: "Oops!", massage: "Your password is \(user.password) 😉")
     }
 
 

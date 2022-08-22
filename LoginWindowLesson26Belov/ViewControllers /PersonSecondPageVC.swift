@@ -9,12 +9,19 @@ import UIKit
 
 class PersonSecondPageVC: UIViewController {
 
+    @IBOutlet weak var bio: UITextView!
+
+    var user: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        bio.text = user?.info.bio
+        bio.isEditable = true
 
         // Do any additional setup after loading the view.
     }
-    
+
+
 
     /*
     // MARK: - Navigation

@@ -23,10 +23,15 @@ class PersonMainPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        fotoOfUser.layer.cornerRadius = 100
+        getInfo()
     }
 
     private func getInfo() {
         name.text = user?.info.Name
-        
+        secondName.text = user?.info.secondName
+//        age.text = user?.info.age
+        relationship.text = user?.info.relations
+        developingExperience.text = user?.info.levelDevelopment
+        hobbi.text = user?.info.hobbies
     }
 }
